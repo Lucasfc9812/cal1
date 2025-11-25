@@ -1,0 +1,181 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.greeting {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: var(--foreground-muted);
+}
+
+.summaryCard {
+    background: linear-gradient(135deg, #1e1e1e, #121212);
+    border-radius: 24px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.summaryCard::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(209, 243, 102, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.ringContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.ringLabel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.caloriesValue {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--primary);
+}
+
+.caloriesLabel {
+    font-size: 0.8rem;
+    color: var(--foreground-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.macrosGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.macroItem {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.macroLabel {
+    font-size: 0.75rem;
+    color: var(--foreground-muted);
+    margin-bottom: 4px;
+}
+
+.macroValue {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.macroBar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.macroFill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1s ease;
+}
+
+.sectionTitle {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mealList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 100px;
+    /* Space for FAB */
+}
+
+.mealItem {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.mealImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: #333;
+    object-fit: cover;
+    margin-right: 16px;
+}
+
+.mealInfo {
+    flex: 1;
+}
+
+.mealName {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.mealCals {
+    font-size: 0.85rem;
+    color: var(--primary);
+}
+
+.fab {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(209, 243, 102, 0.4);
+    cursor: pointer;
+    border: none;
+    z-index: 100;
+    transition: transform 0.2s;
+}
+
+.fab:active {
+    transform: translateX(-50%) scale(0.9);
+}
